@@ -12,40 +12,12 @@ class HKLayout extends React.Component {
     };
   }
 
-  renderContent(pageText) {
-    return (
-      <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-        <div style={{ paddingTop: 60 }}>Clicked “{pageText}” tab， show “{pageText}” information</div>
-        <a style={{ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9' }}
-          onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              hidden: !this.state.hidden,
-            });
-          }}
-        >
-          Click to show/hide tab-bar
-        </a>
-        <a style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
-          onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              fullScreen: !this.state.fullScreen,
-            });
-          }}
-        >
-          Click to switch fullscreen
-        </a>
-      </div>
-    );
-  }
-
   render() {
     const {history} = this.props;
     const path = this.props.match.path;
     return (
       <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
-        <TabBar>
+        <TabBar tintColor="#21b97a">
           <TabBar.Item
             title="首页"
             key="Home"
@@ -57,7 +29,7 @@ class HKLayout extends React.Component {
             }}
           >
             {/* 放首页 */}
-            {this.props.children}
+            {path==="/"&&this.props.children}
           </TabBar.Item>
           <TabBar.Item
             icon={ <i className="iconfont icon-findHouse"></i> }
@@ -70,7 +42,7 @@ class HKLayout extends React.Component {
             }}
           >
             {/* 放找房 */}
-            {this.props.children}
+            {path==="/HKList"&&this.props.children}
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iconfont icon-infom"></i>}
@@ -83,7 +55,7 @@ class HKLayout extends React.Component {
             }}
           >
             {/* 放资讯 */}
-            {this.props.children}
+            {path==="/News"&&this.props.children}
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iocnfont icon-my"></i>}
@@ -96,7 +68,7 @@ class HKLayout extends React.Component {
             }}
           >
             {/* 放我的 */}
-            {this.props.children}
+            {path==="/My"&&this.props.children}
           </TabBar.Item>
         </TabBar>
       </div>

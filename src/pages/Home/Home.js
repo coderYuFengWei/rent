@@ -1,6 +1,7 @@
 import React, { Component,Fragment } from 'react';
 import { Carousel } from 'antd-mobile';
-import axios from "axios";
+// import axios from "axios";
+import axios from "../../utils/request";
 
 export default class Home extends Component {
   state = {
@@ -9,7 +10,7 @@ export default class Home extends Component {
   }
 
   componentDidMount(){
-    axios.get("http://hkzf.zbztb.cn/home/swiper")
+    axios.get("/home/swiper")
     .then(res=>{
       this.setState({
         swiperList: res.data.body
@@ -27,12 +28,12 @@ export default class Home extends Component {
         >
           {swiperList.map(val => (
             <a
-              key={val}
+              key={val.id}
               href="http://www.alipay.com"
               style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
             >
               <img
-                src={"http://hkzf.zbztb.cn" + val.imgSrc}
+                src={axios.defaults.baseURL + val.imgSrc}
                 alt=""
                 style={{ width: '100%', verticalAlign: 'top' }}
                 onLoad={() => {
