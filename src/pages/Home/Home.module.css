@@ -1,0 +1,126 @@
+.infoBar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  font-size: 13px;
+  background-color: #fff;
+}
+
+.infoBar .infoBar_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infoBar .infoBar_item img {
+  width: 50%;
+  padding-bottom: 8px;
+}
+
+.rentList {
+  padding: 10px;
+}
+
+.rentList .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+}
+
+.rentList .title span:nth-child(1) {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.rentList .title span:nth-child(2) {
+  color: #aaa;
+}
+
+.rentList .rentInfo_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rentList .rentInfo_list .rentInfo_list_item {
+  background-color: #fff;
+  margin-bottom: 10px;
+  flex: 48%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.rentList .rentInfo_list .rentInfo_list_item:nth-child(2n-1) {
+  margin-right: 10px;
+}
+
+.rentList .rentInfo_list .rentInfo_list_item .list_desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px 15px 5px 0;
+}
+
+.rentList .rentInfo_list .rentInfo_list_item .list_desc span:nth-child(1) {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.rentList .rentInfo_list .rentInfo_list_item .list_desc span:nth-child(2) {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.rentList .rentInfo_list .rentInfo_list_item img {
+  width: 40%;
+}
+
+.news {
+  padding: 10px;
+  background-color: #fff;
+}
+
+.news p {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.news .news_item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.news .news_item img {
+  width: 40%;
+}
+
+.news .news_item .news_desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.news .news_item .news_desc p {
+  font-size: 14px;
+}
+
+.news .news_item .news_desc .tiny {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news .news_item .news_desc .tiny span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.footer {
+  text-align: center;
+  margin: 15px 0;
+  color: #aaa;
+}
