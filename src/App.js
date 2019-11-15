@@ -1,5 +1,5 @@
 import React, { Component,Fragment } from 'react';
-import HKLayout from "./component/common/HKLayout";
+import HKLayout from "./component/common/HKLayout/HKLayout";
 import { HashRouter as Router, Route } from "react-router-dom"
 
 import Home from "./pages/Home/Home"

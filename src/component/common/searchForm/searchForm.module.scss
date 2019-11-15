@@ -1,0 +1,45 @@
+.search {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .search_btn {
+    background-color: #fff;
+    border-radius: 3px;
+    height: 100%;
+    flex: 1;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+
+    span {
+      padding-left: 10px;
+    }
+
+    .line {
+      padding-right: 10px;
+      color: #ddd;
+    }
+
+    i {
+      color: #9c9fa1;
+    }
+
+    .arrow {
+      font-size: 12px;
+    }
+
+    p {
+      font-size: 13px;
+      color: #9c9fa1;
+      padding-left: 5px;
+    }
+  }
+
+  .mapicon {
+    font-size: 26px;
+    color: #fff;
+    text-align: center;
+  }
+}

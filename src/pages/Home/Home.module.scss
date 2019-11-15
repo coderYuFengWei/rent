@@ -1,3 +1,16 @@
+.swiperForm {
+  position: relative;
+
+  .searchForm {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, 0);
+    width: 94%;
+  }
+}
+
 .infoBar {
   display: flex;
   justify-content: space-around;

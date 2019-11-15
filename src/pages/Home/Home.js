@@ -3,6 +3,7 @@ import { Carousel } from 'antd-mobile';
 // import axios from "axios";
 import axios from "../../utils/request";
 import HomeCss from "./Home.module.scss";
+import SearchForm from "../../component/common/searchForm/searchForm";
 
 import nav1 from "../../assets/images/nav-1.png"
 import nav2 from "../../assets/images/nav-2.png"
@@ -52,7 +53,8 @@ export default class Home extends Component {
       <Fragment>
 
         {/* 轮播图 */}
-        <div className="swiper">
+        <div className={HomeCss.swiperForm}>
+          <div className={HomeCss.searchForm}><SearchForm/></div>
          {swiperList.length &&<Carousel
           autoplay
           infinite
