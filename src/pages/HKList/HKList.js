@@ -4,7 +4,7 @@ import { withRouter} from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "../../utils/request";
 import HKListCss from "./HKList.module.scss";
-// import { syncSetCity } from "../../store/actionCreator";
+import { syncSetCity } from "../../store/actionCreator";
 
 // 可视区域渲染
 import { List,AutoSizer } from "react-virtualized"
@@ -76,7 +76,7 @@ class HKList extends Component {
         <div className={HKListCss.cities_item_title}>{property}</div>
         <div className={HKListCss.cities_item_group}>
           {item[property].map((v,i)=>
-          <div className={HKListCss.city_name} key={i}>{v}</div>
+          <div onClick={()=>this.handleCityChange(v)} className={HKListCss.city_name} key={i}>{v}</div>
           )}
         </div>
       </div>
@@ -106,6 +106,15 @@ class HKList extends Component {
     })
   }
 
+  // 点击城市事件
+  handleCityChange=(cityName)=>{
+    if(['北京','上海','深圳','广州'].includes(cityName)){
+      this.props.setCity(cityName);
+      this.props.history.push('/');
+    }else{
+      Toast.info('该城市下没有房源信息',1);
+    }
+  }
 
   render() {
     const { totalCities,letterList,currentIndex } = this.state;
@@ -153,12 +162,12 @@ const mapStateToProps = (state) => ({
   cityName:state.mapReducer.cityName
 })
 
-// const mapDispatchToProps = dispatch=> {
-//   return {
-//     setCity(cityName){
-//       dispatch(syncSetCity(cityName))
-//     }
-//   }
-// }
+const mapDispatchToProps = dispatch=> {
+  return {
+    setCity(cityName){
+      dispatch(syncSetCity(cityName))
+    }
+  }
+}
 
-export default connect(mapStateToProps, null)(withRouter(HKList));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HKList));

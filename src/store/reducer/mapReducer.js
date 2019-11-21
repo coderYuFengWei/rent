@@ -10,7 +10,8 @@ export default (state = defaultState, action) => {
 
   switch (action.type) {
     case SET_CITY:
-      newState.cityName = action.value;
+      newState.cityName = action.value.cityName;
+      newState.point = action.value.point;
       break;
     default:
       return  state;

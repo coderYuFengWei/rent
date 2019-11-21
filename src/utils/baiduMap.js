@@ -18,7 +18,7 @@ export const getCity = () => {
         var myGeo = new BMap.Geocoder();
         myGeo.getLocation(new BMap.Point(point.lng, point.lat), function (result) {
           const cityName = result.addressComponents.city;
-          resolve(cityName);
+          resolve({cityName,point});
         })
       })
   })

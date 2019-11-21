@@ -15,7 +15,7 @@ class searchForm extends Component {
             <i className={['iconfont icon-seach',SearchCss.search_icon].join(' ')}></i>
             <p>请输入小区或地址</p>
           </div>
-          <i className={['iconfont icon-map',SearchCss.mapicon].join(' ')}></i>
+          <i onClick={()=>this.props.history.push('/BDMap')} className={['iconfont icon-map',SearchCss.mapicon].join(' ')}></i>
         </div>
       </Fragment>
     )

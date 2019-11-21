@@ -5,11 +5,20 @@ import {getCity} from "../../utils/baiduMap";
 export const setCity = () => {
   return (dispatch) => {
     getCity()
-      .then(cityName => {
+      .then(({cityName,point}) => {
+        cityName = cityName.substr(0, cityName.length - 1);
         dispatch({
           type: SET_CITY,
-          value: cityName
+          value: {cityName,point}
         })
       })
+  }
+}
+
+// 同步获取城市数据
+export const syncSetCity = (cityName)=>{
+  return {
+    type: SET_CITY,
+    value: {cityName}
   }
 }
